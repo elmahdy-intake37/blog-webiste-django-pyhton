@@ -1,0 +1,32 @@
+{%  extends 'geeks/base.html' %}
+{% block main_block %}
+{% load staticfiles %}
+{% static "" as base_url%}
+
+<h1>{{spacific_post.title}} ({{spacific_post.post_category}})</h1>
+<img src="{% static spacific_post.post_image %}" border=1px/>
+<h3>Content :</h3>
+<p>{{spacific_post.contant}}</p>
+<h3>Comments :</h3>
+{%  for comment in all_comments %}
+<div style="border:1px solid black;margin-top: 10px;margin-bottom:10px;width: 500px;padding:7px;">
+	<strong>{{ comment.author }} at {{comment.comment_date}}</strong>
+  	<p>{{comment.comment_contant}}</p>
+		<hr>
+				<h3>Replayes for this comment :</h3>
+		{%  for reply in all_replay %}
+			{% if reply.comment_id_id == comment.id %}
+				<strong>{{ reply.author }} at {{reply.reply_date}}</strong>
+				<p>{{reply.reply_contant}}</p>
+				<hr>
+			{% endif %}
+		{% empty %}
+				no replay
+		{%  endfor  %}
+			<button><a class="btn btn-default" onclick='location.href = "posts/{{spacific_post.id}}/{{comment.id}}/newreply";'>Add reply</a></button>
+</div>
+{% empty %}
+	<p>No comments here yet :(</p>
+{%  endfor  %}
+<button><a class="btn btn-default" onclick='location.href = "posts/{{spacific_post.id}}/newcomment";'>Add comment</a></button>
+{% endblock %}

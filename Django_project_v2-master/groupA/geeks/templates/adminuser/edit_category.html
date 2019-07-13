@@ -1,0 +1,23 @@
+{%  extends 'geeks/base.html' %}
+{% block main_block %}
+<html>
+<head>
+
+</head>
+<body style=" background-image: url('/static/imgs/image1.jpeg');background-size:cover;background-repeat:no-repeat">
+
+	<center>
+<table border ='1'>
+<th>id</th> <th>title</th>
+
+{% for c in cnew_form %}
+<tr>
+  <td>{{c.id}}</td>
+  <td>{{c.title}}</td>
+  
+</tr>
+{% endfor %}
+</center>
+</body>
+</html>
+{% endblock %}

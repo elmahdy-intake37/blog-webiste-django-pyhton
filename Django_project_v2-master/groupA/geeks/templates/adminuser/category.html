@@ -1,0 +1,16 @@
+{%  extends 'geeks/base.html' %}
+
+
+{% block main_block %}
+
+<table border ='1'>
+<th>Category</th>
+
+{%  for cat in all_categorys %}
+<tr>
+	<td><a href="posts/{{cat.id}}/show_posts">{{cat.title}}</a></td>
+</tr>
+{%  endfor  %}
+</table>
+
+{% endblock %}

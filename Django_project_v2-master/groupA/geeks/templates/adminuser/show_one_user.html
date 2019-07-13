@@ -1,0 +1,25 @@
+{%  extends 'geeks/base.html' %}
+{% block main_block %}
+
+<html>
+<head>
+</head>
+</head>
+<body style=" background-image: url('/static/imgs/image1.jpeg');background-size:cover;background-repeat:no-repeat">
+	<center>
+<table border ='1'>
+<th>id</th> <th>username</th><th>fname</th><th>lname</th><th>email</th>
+
+{% for us in usfilte %}
+<tr>
+  <td>{{us.id}}</td>
+  <td>{{us.username}}</td>
+  <td>{{us.first_name}}</td>
+  <td>{{us.last_name}}</td>
+  <td>{{us.email}}</td>
+</tr>
+{% endfor %}
+</center>
+</body>
+</html>
+{% endblock %}

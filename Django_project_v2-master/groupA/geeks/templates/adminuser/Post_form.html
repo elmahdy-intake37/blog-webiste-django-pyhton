@@ -1,0 +1,30 @@
+{%  extends 'geeks/base.html' %}
+
+{% block main_block %}
+<html>
+<head>
+	</head>
+	<body style=" background-image: url('/static/imgs/image1.jpeg');background-size:cover;background-repeat:no-repeat">
+		<center>
+		<table> 
+			<tr>
+				<td>
+		<center>
+		<form method='POST'>{% csrf_token %}
+			{{ pnew_form.as_p }}
+			<p> add image </p>
+			<img src="a.jpg"  alt="image cant load" style="width:80px;height:80px;"/>
+ 
+			<button type='submit'>Post </button>
+			<button type="reset" class="myButton"class="w3-btn w3-round-xxlarge">reset</button>
+			<input id="id_image" type="file" class="myButton" name="upload">
+			</center>
+		</td>
+	</tr>
+			</form>
+		</table>
+	
+		</center>
+	</body>
+</html>
+{% endblock %}

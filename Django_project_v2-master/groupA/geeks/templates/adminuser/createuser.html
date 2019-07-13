@@ -1,0 +1,30 @@
+
+{%  extends 'geeks/base.html' %}
+
+{% block main_block %}
+<html>
+<head>
+<h1 style="text-align:center;">Create User</h1>	
+	</head>
+	<body <body style=" background-image: url('/static/imgs/image1.jpeg');background-size:cover;background-repeat:no-repeat">
+		<center>
+<table border="1">
+<tr>
+<td>
+		<form method='POST'>{% csrf_token %}
+			{{ form.as_p }}
+
+	</td>
+</tr>
+		<tr>
+<td>
+			<button type='submit'>Submit</button>
+						<button type='submit' a onclick="location.href='templates/geeks/base.index' ">  Back</a></button>
+			</center>
+</td>
+</tr>
+		</form>
+	</table>
+	</body>
+</html>
+{% endblock %}

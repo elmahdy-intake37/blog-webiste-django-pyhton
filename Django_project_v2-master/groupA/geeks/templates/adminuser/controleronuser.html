@@ -1,0 +1,53 @@
+{%  extends 'geeks/base.html' %}
+
+
+<html>
+
+
+<head>
+ <h1>controller on users</h1>
+</head>
+{% block main_block %}
+<body style=" background-image: url('/static/imgs/image1.jpeg');background-size:cover;background-repeat:no-repeat">
+<table border = '4'>
+<thead>
+
+
+<th>id</th>
+<th>User</th>
+<th>fname</th>
+<th>lname</th>
+<th>email</th>
+
+
+<th colspan="7">actions</th>
+{% for user in all_user %}
+<tr>
+	<td>{{user.id}}</td>
+	<td>{{user.username}}</td>
+	<td>{{user.first_name}}</td>
+	<td>{{user.last_name}}</td>
+	<td>{{user.email}}</td>
+
+	
+
+	<td><a href="login">create</a></td>
+	<td><a href="{{user.id}}/delus">Delete</a></td>
+	<td><a href="{{user.id}}/upduser">update</a></td>
+	<td><a href="{{user.id}}/show">details</a></td>
+	<td><a href="#">block</a></td>
+	<td><a href="#">active/unactive</a></td>
+								
+	
+
+
+</tr>
+{% endfor %}
+</thead>
+</table>
+
+
+</body>
+{% endblock %}
+
+</html>

@@ -1,0 +1,25 @@
+{%  extends 'geeks/base.html' %}
+
+
+{% block main_block %}
+
+<table border ='1'>
+<th>Category</th>
+
+{%  for cat in all_categorys %}
+<tr>
+	<td><a href="posts/{{cat.id}}/show_posts">{{cat.title}}</a>
+	{% if request.user.is_authenticated %}
+            <div class="subscribe">
+                {% if cat in allsubscribe %}
+                    <a href = "unsubscribe/{{cat.id}}/"> Unsubscribe </a>
+                {% else %}
+                    <a href = "subscribe/{{cat.id}}/"> Subscribe </a>
+                {% endif %}
+    {% endif %}
+	</td>
+</tr>
+{%  endfor  %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+<html>
+<head>
+	</head>
+	<body>
+		<form method='POST'>{% csrf_token %}
+			{{ pnew_form.as_p }}
+			<button type='submit'>Post </button>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+{%  extends 'geeks/base.html' %}
+
+
+<html>
+
+
+<head>
+ <h1>controller on catgory</h1>
+</head>
+{% block main_block %}
+<body <body style=" background-image: url('/static/imgs/image1.jpeg');background-size:cover;background-repeat:no-repeat">
+<table border = '4'>
+<thead>
+
+
+<th>id</th>
+<th>title</th>
+
+
+
+<th colspan="4">actions</th>
+{% for cat in all_categorys %}
+<tr>
+	<td>{{cat.id}}</td>
+	<td>{{cat.title}}</td>
+	
+
+	
+
+	<td><a href="cnew">create category</a></td>
+	<td><a href="{{cat.id}}/edit">update</a></td>
+	<td><a href="{{cat.id}}/delc">Delete</a></td>
+	<td><a href="{{cat.id}}/cat">details</a></td>
+	
+	
+								
+	
+
+
+</tr>
+{% endfor %}
+</thead>
+</table>
+
+
+</body>
+
+</html>
+{% endblock %}

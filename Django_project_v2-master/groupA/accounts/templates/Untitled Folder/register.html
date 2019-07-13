@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+	<div class='col_sm_6 col_sm_offset_3'>
+
+		<h1>{{title}}</h1>
+
+
+		<form method="POST" action="" enctype="multipart/form_data">{% csrf_token %}
+
+		{{form|crispy}}
+
+
+		<!-- <button	type='submit' class='btn btn_default' value='Register'  ></button> -->
+		<!-- <button onclick=""> -->
+
+
+		<!-- <button onclick="window.location='http://127.0.0.1:8000/login/'">Register</button> -->
+
+        <input	type='submit' class='btn btn_default' value='Submit' />
+
+
+		</form>
+	</div>
+{% endblock %}

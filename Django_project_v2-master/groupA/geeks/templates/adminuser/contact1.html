@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+{%  extends 'geeks/base.html' %}
+
+
+
+{% block main_block 
+
+<html lang="en">
+<head>
+<title>Contact us</title>
+</head>
+<body <body style=" background-image: url('/static/imgs/image1.jpeg');background-size:cover;background-repeat:no-repeat">
+<h1>Contact us</h1>
+<form action="." method="POST">
+	<table>
+{{ form.as_table }}
+</table>
+	<div class="fieldWrapper">
+{{ form.topic.errors }}
+<label for="id_topic">Kind of feedback:</label>
+{{ form.topic }}
+</div>
+<div class="fieldWrapper">
+{{ form.message.errors }}
+<label for="id_message">Your message:</label>
+{{ form.message }}
+</div>
+<div class="fieldWrapper">
+{{ form.sender.errors }}
+<label for="id_sender">Your email (optional):</label>
+{{ form.sender }}
+</div>
+
+<p><input type="submit" value="Submit"></p>
+</form>
+</body>
+</html>
+{% endblock %}

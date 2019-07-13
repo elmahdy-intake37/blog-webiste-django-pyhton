@@ -1,0 +1,60 @@
+{%  extends 'geeks/base.html' %}
+
+<html>
+
+
+<head>
+ <h1>controller on users</h1>
+</head>
+{% block main_block %}
+<body style=" background-image: url('/static/imgs/image1.jpeg');background-size:cover;background-repeat:no-repeat">
+<table border = '4'>
+<thead>
+
+
+<th>category_id</th>
+<th>id</th>
+<th>title</th>
+<th>post_time</th>
+<th>contant</th>
+
+
+<th>post_image</th>
+
+
+<th colspan="7">actions</th>
+{% for post in all_post %}
+<tr>
+	<td>{{post.post_category_id}}</td>
+	<td>{{post.id}}</td>
+	<td>{{post.title}}</td>
+	<td>{{post.post_time}}</td>
+	<td>{{post.contant}}</td>
+	
+	
+	<td>{{post.post_image}}</td>
+
+
+	
+
+	<td><a href="pnew">create</a></td>
+	<td><a href="{{post.id}}/show_posts">details</td>
+	<td><a href="{{post.id}}/pdel">Delete</a></td>
+	<td><a href="{{post.id}}/pupdate">update</a></td>
+	
+	
+	
+								
+	
+
+
+</tr>
+{% endfor %}
+</thead>
+</table>
+
+
+
+</body>
+</html>
+{% endblock %}

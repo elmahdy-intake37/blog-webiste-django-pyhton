@@ -1,0 +1,15 @@
+{%  extends 'geeks/base.html' %}
+
+
+{% block main_block %}
+<html>
+<head>
+	</head>
+	<body>
+		<form method='POST'>{% csrf_token %}
+			{{ contact_form.as_p }}
+			<button type='submit'>Post </button>
+		</form>
+	</body>
+</html>
+{% endblock %}

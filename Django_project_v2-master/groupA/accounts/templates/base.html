@@ -1,0 +1,21 @@
+<html>
+	<head> </head>
+	<body>
+
+       {% if not request.user.is_authenticated %}
+
+
+		{% else %}
+
+		{% if request.user.is_superuser %}
+		<li><a href='/geeks/adminhome/'>Manage_blog</a></li>
+		<li><a href='/accounts/logout'>logout</a></li>
+    {% else %}
+     <li><a href='/accounts/logout'>logout</a></li>
+
+    {% endif %}
+		{% endif %}
+		{% block content %}
+		{% endblock %}
+	</body>
+</html>

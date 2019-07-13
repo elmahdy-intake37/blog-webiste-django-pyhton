@@ -1,0 +1,23 @@
+{%  extends 'geeks/base.html' %}
+{% block main_block %}
+
+<html>
+<head>
+</head>
+</head>
+<body style=" background-image: url('/static/imgs/image1.jpeg');background-size:cover;background-repeat:no-repeat">
+
+	<center>
+<table border ='1'>
+<th>title</th>
+
+{% for post in rude %}
+<tr>
+  <td>{{post.title}}</td>
+</tr>
+{% endfor %}
+</center>
+<button type="button" name="button"><a href="/geeks/account/create/">Create New Word</a></button>
+</body>
+</html>
+{% endblock %}

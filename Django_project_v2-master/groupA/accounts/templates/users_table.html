@@ -1,0 +1,63 @@
+
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.css' %}">
+<!-- <link rel="stylesheet" href="/home/abdelrahman/Desktop/bootstrap_day2/css/sheet.css"> -->
+<script type="text/javascript" src="/home/abdelrahman/Django_proj/tether.js"></script>
+<script type="/home/abdelrahman/Django_project/groupA/accounts/static/node_modules/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/home/abdelrahman/Django_project/groupA/accounts/static/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+
+
+<meta charset="UTF-8">
+
+<title>Title of the document</title>
+</head>
+<body>
+	<div class="container">
+<table class="table table-bordered" style="margin-top:50px">
+<tr><th scope="row" >NAME</th>
+	<th scope="row">SuperUser</th>
+	<th scope="row">Active</th>
+
+
+</tr>
+{% for s in tables %}
+
+
+	<tr>
+
+	{% if s.is_superuser == 1 %}
+
+		<td class="text" style="color:red;">{{s.username}}</td>
+		<td class="text" style="color:red;">{{s.is_superuser}}</td>
+		<td class="text" style="color:red;">{{s.is_active}}</td>
+
+    {% else %}
+		<td class="text">{{s.username}}</td>
+		<td class="text">{{s.is_superuser}}</td>
+		<td class="text">{{s.is_active}}</td>
+
+	 	<td> <a href="/accounts/{{s.id}}/edit">Edit</a></td>
+
+		<!-- <td> <a href="student/{{s.id}}/del">Delete</a></td>
+
+		<td> <a href="/students/">Create</a></td> -->
+
+
+	{% endif %}
+	</tr>
+
+
+
+{% endfor %}
+
+
+</table>
+
+</div >
+</body>
+</html>

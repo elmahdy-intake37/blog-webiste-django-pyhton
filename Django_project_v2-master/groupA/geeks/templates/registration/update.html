@@ -1,0 +1,11 @@
+{%  extends 'geeks/base.html' %}
+
+
+
+{% block main_block %}
+<form action="." method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update Profile</button>
+</form>
+{% endblock %}

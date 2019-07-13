@@ -1,0 +1,21 @@
+{%  extends 'geeks/base.html' %}
+{% block main_block %}
+{% load staticfiles %}
+{% static "" as base_url%}
+<h1>Post list</h1>
+<button type="button" name="button"><a href="/geeks/allcategorys">Shaow all categories</button>
+{%  for post in all_posts %}
+
+<div style="border:1px solid black;margin-top: 50px;width: 500px;margin-right: auto; margin-left: auto;">
+<a href="posts/{{post.id}}/details">
+  <img src="{% static post.post_image %}"/>
+</a>
+  <h1>{{post.title}}</h1>
+  <h3>{{post.post_category}}</h3>
+  <h4>Date : {{post.post_time}}</h4>
+	<button><a href="posts/{{post.id}}/details">Show Post</a></button>
+  <p></p>
+</div>
+
+{%  endfor  %}
+{% endblock %}

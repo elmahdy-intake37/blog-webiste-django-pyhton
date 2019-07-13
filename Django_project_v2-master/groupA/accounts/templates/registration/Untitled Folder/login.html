@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+
+
+
+
+			<!-- {% if request.user.is_superuser %}
+			    ...
+			    print "super"
+			    ...
+			{% else %}
+
+			    print "normal"
+			...
+			{% endif %} -->
+
+	<div class='col_sm_6 col_sm_offset_3'>
+
+		<h1>{{title}}</h1>
+
+
+		<form method="POST" action="" enctype="multipart/form_data">{% csrf_token %}
+
+		{{form|crispy}}
+
+
+
+		<!-- <button	type='submit' class='btn btn_default' value='Register'  ></button> -->
+		<!-- <button onclick=""> -->
+		<!-- {% if user.username == 'ahmed' %}
+		<button onclick="window.location='http://127.0.0.1:8000//'">submit</button>
+		{% else %}
+		<button onclick="window.location='http://127.0.0.1:8000//'">submit</button>
+		{% endif %}
+ -->
+
+
+		<button onclick="window.location='http://127.0.0.1:8000/registration/'">Register</button>
+
+		<input	type='submit' class='btn btn_default' value='Login' />
+		<!-- <button onclick="window.location='http://127.0.0.1:8000/'">submit</button> -->
+
+
+
+
+		</form>
+	</div>
+{% endblock %}
+
+
+
+<!-- window.location='http://www.google.com' -->

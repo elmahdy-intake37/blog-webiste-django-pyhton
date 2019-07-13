@@ -1,0 +1,36 @@
+
+{%  extends 'geeks/base.html' %}
+{% load staticfiles %}
+
+
+{% block main_block %}
+<html>
+<head>
+
+	<link rel="stylesheet" href="{%static 'node_modules/bootstrap/dist/css/bootstarp.css' %}" >
+	<h1 style="text-align:center;">Update User</h1>
+	</head>
+	
+			<body style=" background-image: url('/static/imgs/image1.jpeg');background-size:cover;background-repeat:no-repeat">
+
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+		<center>
+<table border="1" class="table table-hover" id="dev-table">
+<tr>
+<td>
+		<form method='POST'>{% csrf_token %}
+			{{ pdate_form.as_p }}
+			<button type='submit'>Submit</button>
+				<button	a onclick="location.href='registration/register.html' "> Back</a></button>
+			</center>
+</td>
+</tr>
+		</form>
+	</table>
+		</div>
+	</center>
+	</body>
+</html>
+{% endblock %}
